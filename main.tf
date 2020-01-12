@@ -107,6 +107,7 @@ resource "aws_instance" "ci_env" {
   }
 
  connection {
+      host        = slef.public_ip
       type        = "ssh"
       private_key = "${file("shiraj.pem")}"
       user        = "ec2-user"
@@ -135,6 +136,7 @@ resource "aws_instance" "pre_prod" {
 
 
  connection {
+      host        = slef.public_ip
       type        = "ssh"
       private_key = "${file("shiraj.pem")}"
       user        = "ec2-user"
@@ -169,6 +171,7 @@ resource "aws_instance" "prod" {
 
 
  connection {
+      host        = slef.public_ip
       type        = "ssh"
       private_key = "${file("shiraj.pem")}"
       user        = "ec2-user"
