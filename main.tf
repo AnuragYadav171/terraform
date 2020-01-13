@@ -8,7 +8,7 @@ resource "aws_s3_bucket" "prod_bucket" {
   acl    = "private"
 
   tags = {
-    Name        = "My bucket22"
+    Name        = "My bucket2"
     Environment = "Prod"
   }
 }
