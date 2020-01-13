@@ -4,7 +4,7 @@ provider "aws" {
 
 
 resource "aws_s3_bucket" "prod_bucket" {
-  bucket = "anurag001001001"
+  bucket = "anurag0010010011"
   acl    = "private"
 
   tags = {
