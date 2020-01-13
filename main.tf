@@ -109,6 +109,7 @@ resource "aws_instance" "ci_env" {
   }
 
  connection {
+      host        = self.public_ip
       type        = "ssh"
       private_key = "${file("shiraj.pem")}"
       user        = "ec2-user"
