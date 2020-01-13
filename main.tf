@@ -15,6 +15,7 @@ resource "aws_s3_bucket" "prod_bucket" {
 
 
 
+/*
 resource "aws_security_group" "allow_jenkins" {
   name        = "jenkins_sg"
   description = "Allow inbound traffic"
@@ -42,7 +43,7 @@ resource "aws_security_group" "allow_jenkins" {
     cidr_blocks     = ["0.0.0.0/0"]
   }
 }
-
+*/
 
 
 resource "aws_security_group" "allow_node_app" {
@@ -76,6 +77,7 @@ resource "aws_security_group" "allow_node_app" {
 
 
 
+/*
 resource "aws_instance" "ci_env" {
   ami           = "ami-0217a85e28e625474"
   instance_type = "t2.micro"
@@ -97,7 +99,7 @@ resource "aws_instance" "ci_env" {
   "sudo usermod -a -G docker ec2-user",
   "sudo wget https://releases.hashicorp.com/terraform/0.12.19/terraform_0.12.19_linux_386.zip",
   "sudo unzip terraform_0.12.19_linux_386.zip",
-  "sudo mv terraform /usr/local/bin/"
+  "sudo mv terraform /usr/bin/"
   ]  
 }
 
@@ -114,6 +116,8 @@ resource "aws_instance" "ci_env" {
 
   vpc_security_group_ids = ["${aws_security_group.allow_jenkins.id}"]
 }
+
+*/
 
 
 resource "aws_instance" "pre_prod" {
